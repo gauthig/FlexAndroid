@@ -38,6 +38,10 @@ jobs:
       - name: Verify the Gradle wrapper is the official one
         uses: gradle/actions/wrapper-validation@v4
 
+      - name: Make the wrapper executable
+        # See the note in android-ci.yml: Git on Windows drops the exec bit.
+        run: chmod +x ./gradlew
+
       - name: Test and lint
         # A tag should not produce a release that main would have rejected.
         run: ./gradlew --no-daemon testDebugUnitTest lintDebug

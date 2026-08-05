@@ -46,6 +46,13 @@ jobs:
         # this runs before anything invokes it.
         uses: gradle/actions/wrapper-validation@v4
 
+      - name: Make the wrapper executable
+        # Git on Windows does not track the executable bit, so a commit made
+        # there can land gradlew as mode 100644 and every later step dies with
+        # exit code 126. The index mode is the real fix; this is the guard that
+        # keeps a Windows contributor from breaking CI silently.
+        run: chmod +x ./gradlew
+
       - name: Unit tests
         run: ./gradlew --no-daemon testDebugUnitTest
 
