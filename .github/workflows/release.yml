@@ -78,7 +78,7 @@ jobs:
           ls -la dist
 
       - name: Publish a draft release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: dist/*.apk
           # Draft, not published: a human should read the notes and confirm the
