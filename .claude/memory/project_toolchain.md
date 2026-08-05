@@ -5,9 +5,12 @@ metadata:
   type: project
 ---
 
-Pinned: JDK 17, AGP 9.3.1, Gradle 9.6.1, Kotlin 2.2.21, `compileSdk`/`targetSdk` 37,
+Pinned: JDK 17, AGP 9.3.1, Gradle 9.6.1, Kotlin 2.4.10, `compileSdk`/`targetSdk` 37,
 build-tools 37.0.0, `minSdk` 26. Versions live in `gradle/libs.versions.toml` and
 `gradle/wrapper/gradle-wrapper.properties`.
+
+Kotlin was 2.2.21 at first commit and went to 2.4.10 via Dependabot on
+2026-08-05 — zero new compiler warnings, verified locally before merging.
 
 Three traps, all hit during the initial build:
 

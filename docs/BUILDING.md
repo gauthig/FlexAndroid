@@ -9,7 +9,7 @@
 | Android SDK Build-Tools | **37.0.0** | Matches the platform. |
 | Gradle | **9.6.1** | Supplied by the wrapper — do not install it separately. |
 | Android Gradle Plugin | **9.3.1** | Pinned in `gradle/libs.versions.toml`. |
-| Kotlin | **2.2.21** | Compose compiler plugin version follows it. |
+| Kotlin | **2.4.10** | Compose compiler plugin version follows it. |
 
 `minSdk` is 26 (Android 8.0).
 
@@ -168,6 +168,17 @@ system-installed Gradle.
 
 **`Failed to apply plugin 'org.jetbrains.kotlin.android'`** — that plugin was removed
 in AGP 9, which has built-in Kotlin support. If you added it back, remove it again.
+
+**CI fails with `exit code 126`** — `gradlew` lost its executable bit. Git on Windows
+does not track it, so a commit made there can land the script as mode `100644` and the
+Linux runner then finds it but cannot run it. Check and fix:
+
+```bash
+git ls-files -s gradlew          # want 100755, not 100644
+git update-index --chmod=+x gradlew
+```
+
+Building on Windows will not reproduce this, because it uses `gradlew.bat`.
 
 **Lint fails on a warning you think is wrong** — say so in the pull request rather
 than adding it to a baseline. `lint-baseline.xml` is deliberately absent: a baseline

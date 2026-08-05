@@ -15,7 +15,7 @@ Everything below assumes the wrapper. Do not invoke a system Gradle.
 ```
 
 - JDK **17**, Android SDK platform **37**, build-tools **37.0.0**.
-- AGP **9.3.1**, Gradle **9.6.1**, Kotlin **2.2.21**, `minSdk` 26.
+- AGP **9.3.1**, Gradle **9.6.1**, Kotlin **2.4.10**, `minSdk` 26.
 - **AGP 9 removed the `org.jetbrains.kotlin.android` plugin** — Kotlin support is
   built in. Adding it back breaks configuration. `kotlin.plugin.compose` is still
   needed and still applied.
@@ -56,6 +56,10 @@ as if it were verified.
 - **`res/mipmap-anydpi-v26` must keep its `-v26`.** Lint's `ObsoleteSdkInt` says to
   drop it since `minSdk` is 26; doing so makes AAPT2 fail to resolve
   `@mipmap/ic_launcher` entirely. The check is disabled with that explanation.
+- **`gradlew` must stay mode `100755` in the index.** Git on Windows does not track
+  the executable bit, and committing it as `100644` makes CI die with exit code 126.
+  Check with `git ls-files -s gradlew`; fix with `git update-index --chmod=+x gradlew`.
+  Building on Windows cannot catch this because it uses `gradlew.bat`.
 - **PTT must not latch.** It is a raw gesture with the unkey in a `finally` so any
   loss of the gesture drops the carrier. Do not turn it into a `Button` or a toggle.
 

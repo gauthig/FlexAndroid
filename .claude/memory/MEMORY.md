@@ -1,6 +1,8 @@
 - [Project scope and status](project_flexandroid-scope.md) — one slice, basic RX/TX; protocol done and unit-tested, never tested against hardware
 - [Toolchain and build constraints](project_toolchain.md) — AGP 9 dropped the Kotlin plugin; SDK 37; cloud-sync build-dir workaround
+- [CI and Windows traps](project_ci-windows-traps.md) — gradlew exec bit caused exit 126; a Windows-only build check cannot catch it
 - [Protocol facts that are not documented](reference_wire-protocol-gotchas.md) — FFT bins are pixel rows, meter status uses `#`, stream IDs exceed Int
 - [Where the protocol specs came from](reference_api-sources.md) — FlexRadio's API wiki and AetherSDR's VITA-49 documentation
 - [Audio format decision](project_audio-uncompressed.md) — uncompressed float32 by choice, and what Opus would take
 - [Quality bar for this repo](feedback_quality-bar.md) — zero lint findings, no baseline, layering is one-way
+- [Reviewing dependency bumps](feedback_reviewing-dependency-bumps.md) — green CI is not sufficient evidence; three specific gaps to close

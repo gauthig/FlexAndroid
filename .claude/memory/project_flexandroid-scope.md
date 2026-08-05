@@ -11,9 +11,11 @@ Deliberately absent: a second slice, the waterfall, CW keyer, digital modes, fil
 and AGC controls, Opus compression, automatic reconnect.
 
 As of **2026-08-05** the protocol implementation is complete, 45 unit tests pass,
-lint is clean, and both debug and minified release APKs build. **Nothing has been
+lint is clean, and both debug and minified release APKs build. Published at
+<https://github.com/gauthig/FlexAndroid> with CI green on `main`. **Nothing has been
 verified against physical radio hardware** — no live connection, no audio in or out,
-no on-air transmission.
+no on-air transmission. `release.yml` has also never run: the first `v*` tag will be
+its first execution.
 
 **Why:** the gap between "parses correctly" and "keys a transmitter correctly" is
 where all the remaining risk sits, and overstating it would put someone on the air

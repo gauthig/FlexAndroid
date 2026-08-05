@@ -6,6 +6,20 @@ Notable changes to FlexAndroid. Format follows
 
 ## [Unreleased]
 
+### Fixed
+
+- `gradlew` is now committed with the executable bit set. It was mode `100644`,
+  because Git on Windows does not track the bit, and CI died with exit code 126
+  before running anything. Both workflows also `chmod +x` it as a guard.
+
+### Changed
+
+- Kotlin 2.2.21 → 2.4.10. Verified locally: no new compiler warnings, no new lint
+  findings.
+- GitHub Actions moved to current majors — `actions/checkout` 7,
+  `actions/upload-artifact` 7, `android-actions/setup-android` 4,
+  `gradle/actions` 6, `softprops/action-gh-release` 3.
+
 ### Planned
 
 - Opus audio, once the encoder availability problem has a real answer. See
