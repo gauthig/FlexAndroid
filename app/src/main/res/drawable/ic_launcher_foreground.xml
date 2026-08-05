@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A stylised spectrum trace with a tuning marker: the panadapter is the thing
+     this app exists to put in your pocket. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:strokeColor="#FF4FD1C5"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M28,68 L34,66 L38,69 L42,55 L46,68 L50,64 L54,40 L58,66 L62,67 L66,58 L70,68 L76,66 L80,68" />
+
+    <path
+        android:fillColor="#FFF2A03D"
+        android:pathData="M52.6,36 h2.8 v34 h-2.8 z" />
+
+    <path
+        android:strokeColor="#FF35485C"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M28,74 L80,74" />
+</vector>

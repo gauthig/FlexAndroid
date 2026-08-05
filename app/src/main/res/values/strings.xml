@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FlexAndroid</string>
+
+    <!-- Connection -->
+    <string name="smartlink_sign_in">Sign in to SmartLink</string>
+    <string name="smartlink_hint">Use your FlexRadio community account.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="remember_me">Stay signed in on this device</string>
+    <string name="direct_lan">Connect directly by IP instead</string>
+    <string name="radio_ip">Radio IP address</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="sign_out">Sign out</string>
+    <string name="your_radios">Your radios</string>
+    <string name="no_radios">No radios are reachable through SmartLink right now.</string>
+
+    <!-- Radio screen -->
+    <string name="slice_a">Slice A</string>
+    <string name="power">Power</string>
+    <string name="volume">Volume</string>
+    <string name="ptt">PTT</string>
+    <string name="tune">TUNE</string>
+    <string name="tx">TX</string>
+
+    <!-- Accessibility -->
+    <string name="cd_panadapter">Panadapter spectrum display for slice A</string>
+    <string name="cd_ptt">Press and hold to transmit</string>
+    <string name="cd_s_meter">Received signal strength</string>
+
+    <!-- Errors and permissions -->
+    <string name="cert_changed_title">Radio certificate changed</string>
+    <string name="cert_changed_body">The TLS certificate presented by this radio does not match the one seen previously. This can mean the radio was reset — or that someone is intercepting the connection.</string>
+    <string name="trust_new_cert">Trust the new certificate</string>
+    <string name="cancel">Cancel</string>
+</resources>

@@ -1,0 +1,17 @@
+# Normalise text to LF in the repository. Without this, a clone on Windows commits
+# CRLF and the Linux CI runner cannot execute gradlew: the shebang picks up the \r
+# and the shell reports "bad interpreter".
+* text=auto eol=lf
+
+# The Windows launcher is the one file that genuinely wants CRLF.
+*.bat text eol=crlf
+
+# Binary: never touch these.
+*.jar binary
+*.apk binary
+*.aab binary
+*.keystore binary
+*.jks binary
+*.png binary
+*.jpg binary
+*.webp binary

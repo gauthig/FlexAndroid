@@ -1,0 +1,77 @@
+# ---------------------------------------------------------------------------
+# Gradle
+# ---------------------------------------------------------------------------
+.gradle/
+build/
+*/build/
+!gradle/wrapper/gradle-wrapper.jar
+local.properties
+
+# ---------------------------------------------------------------------------
+# Android build outputs
+# ---------------------------------------------------------------------------
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+release/
+captures/
+lint-results*.html
+lint-results*.xml
+lint-results*.sarif
+
+# ---------------------------------------------------------------------------
+# Signing material. Never commit these: a leaked release key lets anyone ship
+# an update that Android will accept as this app.
+# ---------------------------------------------------------------------------
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+
+# ---------------------------------------------------------------------------
+# IDE
+# ---------------------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# The IDE writes machine-specific paths and per-developer preferences into
+# most of .idea, but a few files are genuinely shared project configuration.
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+
+# ---------------------------------------------------------------------------
+# OS and editor noise
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+
+# ---------------------------------------------------------------------------
+# Native / NDK, should this project ever grow a native audio codec
+# ---------------------------------------------------------------------------
+.cxx/
+obj/
+
+# ---------------------------------------------------------------------------
+# Logs and profiling
+# ---------------------------------------------------------------------------
+*.log
+*.hprof
+/*.trace
+
+# ---------------------------------------------------------------------------
+# Claude Code: the project memory in .claude/ IS committed on purpose so the
+# next session starts with the same context. Only per-user local state is not.
+# ---------------------------------------------------------------------------
+.claude/settings.local.json
+.claude/history/

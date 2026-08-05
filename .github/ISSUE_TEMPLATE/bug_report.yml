@@ -1,0 +1,78 @@
+name: Bug report
+description: Something behaves incorrectly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing: this app has **not been verified against physical radio
+        hardware**. If it fails to connect, key, or produce audio at all, that may
+        be a known gap rather than a regression — check the verification table in
+        the README first.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: And what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Sign in over SmartLink
+        2. Connect to a FLEX-6600
+        3. Press PTT
+    validations:
+      required: true
+
+  - type: input
+    id: radio
+    attributes:
+      label: Radio model and firmware
+      placeholder: FLEX-6600M, SmartSDR v3.8.24
+    validations:
+      required: true
+
+  - type: dropdown
+    id: connection
+    attributes:
+      label: How were you connected?
+      options:
+        - SmartLink, with forwarded ports
+        - SmartLink, via UPnP
+        - SmartLink, needing hole punching
+        - Directly by IP on the local network
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Phone and Android version
+      placeholder: Pixel 8, Android 15
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: FlexAndroid version
+      placeholder: 0.1.0, or a commit SHA
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logcat
+      description: |
+        `adb logcat -s RadioSession:V RadioConnection:V SmartLinkClient:V VitaTransport:V`
+
+        **Redact before pasting.** Logs can contain your callsign, your radio's
+        serial number and its public IP address.
+      render: shell

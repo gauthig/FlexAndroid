@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colours and typography live in Compose (ui/theme). This theme only
+         needs to hand the activity a dark, action-bar-less window so there is
+         no white flash before the first composition. -->
+    <style name="Theme.FlexAndroid" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@color/flex_background</item>
+        <item name="android:navigationBarColor">@color/flex_background</item>
+        <item name="android:windowBackground">@color/flex_background</item>
+    </style>
+</resources>

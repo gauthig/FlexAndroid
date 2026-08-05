@@ -1,0 +1,40 @@
+name: Feature request
+description: Suggest something the app should do
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The scope here is deliberately narrow: one slice, basic receive and transmit,
+        on a phone screen. The README lists what is intentionally absent. A request
+        for something on that list is still welcome — but say why it earns the space.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The operating situation, not the feature. What is awkward today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you have the app do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: screen-space
+    attributes:
+      label: What should it displace?
+      description: |
+        A phone screen is full. If this needs room, say what it takes it from — or
+        make the case that it does not need to be on screen at all.
+
+  - type: checkboxes
+    id: protocol
+    attributes:
+      label: Protocol support
+      options:
+        - label: I have checked that the SmartSDR API can actually do this
